@@ -1,37 +1,33 @@
 import React from 'react';
-import { Drawer, List, ListItem, ListItemIcon, ListItemText, makeStyles } from '@material-ui/core';
+import { Drawer, List, ListItem, ListItemIcon, ListItemText, Box, styled } from '@mui/material';
 import { Link } from 'react-router-dom';
-import HomeIcon from '@material-ui/icons/Home';
-import PeopleIcon from '@material-ui/icons/People';
-import PhotoLibraryIcon from '@material-ui/icons/PhotoLibrary';
-import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import HomeIcon from '@mui/icons-material/Home';
+import PeopleIcon from '@mui/icons-material/People';
+import PhotoLibraryIcon from '@mui/icons-material/PhotoLibrary';
+import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 
 const drawerWidth = 240;
 
-const useStyles = makeStyles((theme) => ({
-  drawer: {
+const StyledDrawer = styled(Drawer)(({ theme }) => ({
+  width: drawerWidth,
+  flexShrink: 0,
+  '& .MuiDrawer-paper': {
     width: drawerWidth,
-    flexShrink: 0,
+    boxSizing: 'border-box',
   },
-  drawerPaper: {
-    width: drawerWidth,
-  },
-  toolbar: theme.mixins.toolbar,
+}));
+
+const Toolbar = styled(Box)(({ theme }) => ({
+  ...theme.mixins.toolbar,
 }));
 
 const Navbar = () => {
-  const classes = useStyles();
-
   return (
-    <Drawer
-      className={classes.drawer}
+    <StyledDrawer
       variant="permanent"
-      classes={{
-        paper: classes.drawerPaper,
-      }}
       anchor="left"
     >
-      <div className={classes.toolbar} />
+      <Toolbar />
       <List>
         <ListItem button component={Link} to="/">
           <ListItemIcon><HomeIcon /></ListItemIcon>
@@ -50,7 +46,7 @@ const Navbar = () => {
           <ListItemText primary="Login" />
         </ListItem>
       </List>
-    </Drawer>
+    </StyledDrawer>
   );
 };
 

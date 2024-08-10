@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Button, Grid, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, TextField, Fab } from '@material-ui/core';
-import AddIcon from '@material-ui/icons/Add';
+import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Button, Grid, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, TextField, Fab } from '@mui/material';
+import AddIcon from '@mui/icons-material/Add';
 import KPIBox from '../components/KPIBox';
 import { dummyData } from '../Data/dummyData';
 
