@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Button, Grid, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, TextField } from '@material-ui/core';
+import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Button, Grid, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, TextField } from '@mui/material';
 import KPIBox from '../components/KPIBox';
 import { dummyData } from '../Data/dummyData';
 
@@ -40,7 +40,7 @@ const UserListing = () => {
   return (
     <div>
       <h1>User Listing</h1>
-      <Grid container spacing={3} style={{ marginBottom: '20px' }}>
+      <Grid container spacing={3} sx={{ marginBottom: '20px' }}>
         <Grid item xs={6}>
           <KPIBox title="Total Users" value={users.length} />
         </Grid>
@@ -69,7 +69,7 @@ const UserListing = () => {
                 <TableCell>{user.email}</TableCell>
                 <TableCell>{user.banned ? 'Banned' : 'Active'}</TableCell>
                 <TableCell>
-                  <Button variant="contained" color="primary" style={{ marginRight: '10px' }} onClick={() => handleEdit(user)}>Edit</Button>
+                  <Button variant="contained" color="primary" sx={{ marginRight: '10px' }} onClick={() => handleEdit(user)}>Edit</Button>
                   <Button variant="contained" color="secondary" onClick={() => handleBan(user)} disabled={user.banned}>Ban</Button>
                 </TableCell>
               </TableRow>

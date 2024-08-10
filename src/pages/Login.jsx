@@ -1,16 +1,15 @@
-import React, { useState,  } from 'react';
-import { TextField, Button, Paper } from '@material-ui/core';
+import React, { useState } from 'react';
+import { TextField, Button, Paper } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-
 
 const Login = () => {
   const [email, setEmail] = useState('');
-  const link = useNavigate();
+  const navigate = useNavigate();
   const [password, setPassword] = useState('');
 
   const handleLogin = (e) => {
     e.preventDefault();
-    link('/')
+    navigate('/');
   };
 
   return (
@@ -36,7 +35,7 @@ const Login = () => {
             onChange={(e) => setPassword(e.target.value)}
             required
           />
-          <Button type="submit" variant="contained" color="primary" fullWidth style={{ marginTop: '20px' }}>
+          <Button type="submit" variant="contained" color="primary" fullWidth sx={{ marginTop: '20px' }}>
             Login
           </Button>
         </form>
