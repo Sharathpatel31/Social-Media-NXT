@@ -7,7 +7,7 @@ import Layout from './components/Layout';
 import Home from './pages/Home';
 import Users from './pages/UserListing';
 import Posts from './pages/PostListing';
-import Login from './pages/Login';
+import Login from './pages/Login'; 
 
 const theme = createTheme();
 
